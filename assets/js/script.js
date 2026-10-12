@@ -18,6 +18,43 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   // --------------------------------------------------------------------------
+  // 0. Dark / Light Theme Toggle & Persistence
+  // --------------------------------------------------------------------------
+  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  const storedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', storedTheme);
+
+  const updateThemeUI = (theme) => {
+    themeToggleBtns.forEach((btn) => {
+      const icon = btn.querySelector('i');
+      if (icon) {
+        if (theme === 'light') {
+          icon.className = 'bi bi-sun-fill text-warning';
+          btn.setAttribute('title', 'Switch to dark mode');
+          btn.setAttribute('aria-label', 'Switch to dark mode');
+        } else {
+          icon.className = 'bi bi-moon';
+          btn.setAttribute('title', 'Switch to light mode');
+          btn.setAttribute('aria-label', 'Switch to light mode');
+        }
+      }
+    });
+  };
+
+  updateThemeUI(storedTheme);
+
+  themeToggleBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', targetTheme);
+      localStorage.setItem('portfolio-theme', targetTheme);
+      updateThemeUI(targetTheme);
+    });
+  });
+
+  // --------------------------------------------------------------------------
   // 1. Sticky Navbar & Mobile Navigation Enhancements
   // --------------------------------------------------------------------------
   const navbar = document.querySelector('.custom-navbar');
