@@ -1,0 +1,20 @@
+{
+  "name": "vishnu-dev-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Frontend Developer Portfolio for Vishnu",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "developer",
+    "html5",
+    "css3",
+    "javascript",
+    "bootstrap5"
+  ],
+  "author": "Vishnu",
+  "license": "MIT"
+}
