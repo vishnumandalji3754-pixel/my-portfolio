@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Vishnu, a Frontend Web Developer crafting responsive, accessible, and performant web applications with modern HTML5, CSS3, JavaScript, and Bootstrap 5.">
+  <meta name="keywords" content="Vishnu, Frontend Developer, Web Developer, Portfolio, HTML5, CSS3, JavaScript, Bootstrap 5">
+  <meta name="author" content="Vishnu">
+  <title>vishnu.dev — Frontend Developer Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       NAVIGATION BAR (Fixed Top with Smooth Scroll Links)
+       ====================================================================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top" aria-label="Main Navigation">
+      <div class="container">
+        <!-- Logo / Brand (Clean Text Logo: vishnu.dev) -->
+        <a class="navbar-brand" href="#home">
+          <span class="fw-bold">vishnu<span class="text-gradient">.dev</span></span>
+        </a>
+
+        <!-- Responsive Hamburger Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNavbar" aria-controls="portfolioNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="portfolioNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn-custom-primary btn-custom-sm" href="#contact">Hire Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         SECTION 1: HERO (#home)
+         ==================================================================== -->
+    <section id="home" class="hero-section" aria-labelledby="heroHeading">
+      <div class="container pt-4">
+        <div class="row align-items-center g-5">
+          <!-- Hero Text Content -->
+          <div class="col-lg-7 reveal-fade-up">
+            <!-- Availability Badge -->
+            <div class="mb-3">
+              <span class="status-pill">
+                <span class="status-dot" aria-hidden="true"></span>
+                Available for Opportunities
+              </span>
+            </div>
+
+            <!-- Main Heading & Headline -->
+            <h1 id="heroHeading" class="mb-3">
+              Hi, I'm <span class="text-gradient">Vishnu</span>
+            </h1>
+            <p class="h3 fw-semibold text-primary mb-4" style="line-height: 1.35;">
+              Frontend Developer Crafting Modern Digital Experiences.
+            </p>
+            <p class="lead text-secondary-custom mb-4" style="max-width: 600px;">
+              Passionate about bridging visual design and robust code. I specialize in building responsive, accessible, and user-friendly web applications using clean HTML5, CSS3, modern JavaScript, and Bootstrap 5.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="d-flex flex-wrap gap-3 mb-4">
+              <a href="#projects" class="btn-custom-primary">
+                <span>View My Projects</span>
+                <i class="bi bi-arrow-down" aria-hidden="true"></i>
+              </a>
+              <a href="#resume-placeholder" class="btn-custom-outline" title="Download Resume ([Resume File])">
+                <i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i>
+                <span>Download Resume</span>
+              </a>
+            </div>
+
+            <!-- Social Links & Copy Email -->
+            <div class="d-flex align-items-center gap-3 pt-2">
+              <span class="text-muted-custom small fw-medium">Connect:</span>
+              <div class="social-links">
+                <a href="https://github.com/[GitHub URL]" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                  <i class="bi bi-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/[LinkedIn URL]" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="mailto:[Your Email]" class="social-btn" aria-label="Send direct email to [Your Email]">
+                  <i class="bi bi-envelope-fill"></i>
+                </a>
+                <button type="button" class="social-btn btn-copy-email" data-email="[Your Email]" aria-label="Copy email address to clipboard" title="Copy Email">
+                  <i class="bi bi-clipboard"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Profile Image (Circular Frame) -->
+          <div class="col-lg-5 text-center reveal-fade-up">
+            <div class="hero-avatar-wrapper mx-auto">
+              <!-- Floating Top Badge -->
+              <div class="floating-badge badge-top-right">
+                <i class="bi bi-lightning-charge-fill text-warning fs-5"></i>
+                <div class="text-start">
+                  <div class="fw-bold text-white small">High Performance</div>
+                  <div class="text-muted-custom" style="font-size: 0.72rem;">Fast & Accessible</div>
+                </div>
+              </div>
+
+              <!-- Main Circular Avatar Frame -->
+              <div class="hero-avatar-frame">
+                <img src="assets/images/profile.jpg" alt="Vishnu - Frontend Web Developer Profile" class="hero-avatar-img">
+              </div>
+
+              <!-- Floating Bottom Badge -->
+              <div class="floating-badge badge-bottom-left">
+                <i class="bi bi-code-slash text-primary fs-5"></i>
+                <div class="text-start">
+                  <div class="fw-bold text-white small">Clean Code</div>
+                  <div class="text-muted-custom" style="font-size: 0.72rem;">Semantic HTML5 & Modern JS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: ABOUT ME (#about)
+         ==================================================================== -->
+    <section id="about" class="section-padding border-top border-dark" aria-labelledby="aboutHeading">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="row mb-5 reveal-fade-up">
+          <div class="col-lg-8">
+            <span class="section-subtitle">Biography & Mindset</span>
+            <h2 id="aboutHeading" class="mb-3">About <span class="text-gradient">Vishnu</span></h2>
+            <p class="lead text-secondary-custom">
+              A developer dedicated to building responsive interfaces with precision, empathy for users, and a deep appreciation for web fundamentals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Two-Column Layout -->
+        <div class="row g-5 align-items-start">
+          <!-- Left Column: Profile Card -->
+          <div class="col-lg-5 reveal-fade-up">
+            <div class="custom-card sticky-top" style="top: 6.5rem; z-index: 1;">
+              <div class="text-center mb-4">
+                <img src="assets/images/profile.jpg" alt="Profile of Vishnu" class="img-fluid rounded-circle mb-3 border border-2 border-primary shadow" style="width: 200px; height: 200px; object-fit: cover;">
+                <h3 class="h4 mb-1 text-white">Vishnu</h3>
+                <p class="text-gradient fw-medium mb-2">[Your Professional Title]</p>
+                <div class="d-flex justify-content-center gap-2 mb-3">
+                  <span class="badge bg-dark border border-secondary text-secondary">[Your Location]</span>
+                  <span class="badge bg-success-subtle border border-success-subtle text-success">Open to Work</span>
+                </div>
+              </div>
+
+              <div class="border-top border-secondary pt-3">
+                <h5 class="text-white fs-6 mb-3">Quick Facts</h5>
+                <ul class="list-unstyled small d-flex flex-column gap-2 text-secondary-custom mb-4">
+                  <li><strong class="text-white">Specialization:</strong> Frontend Engineering & UI Design</li>
+                  <li><strong class="text-white">Core Languages:</strong> HTML5, CSS3, JavaScript (ES6+)</li>
+                  <li><strong class="text-white">Styling Framework:</strong> Bootstrap 5</li>
+                  <li><strong class="text-white">Primary Editor:</strong> VS Code & DevTools</li>
+                  <li><strong class="text-white">Philosophy:</strong> Accessible, Clean & Fast</li>
+                </ul>
+
+                <div class="d-grid gap-2">
+                  <a href="#contact" class="btn-custom-primary">
+                    <i class="bi bi-send-fill me-1"></i> Let's Work Together
+                  </a>
+                  <a href="#resume-placeholder" class="btn-custom-outline">
+                    <i class="bi bi-file-earmark-arrow-down me-1"></i> Download Resume ([Resume File])
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Story & Philosophy -->
+          <div class="col-lg-7 reveal-fade-up">
+            <!-- Background -->
+            <div class="mb-5">
+              <h3 class="h4 text-white mb-3 d-flex align-items-center gap-2">
+                <i class="bi bi-person-badge text-primary"></i>
+                <span>Developer Background</span>
+              </h3>
+              <p class="text-secondary-custom">
+                Hello! I am a frontend developer based in <strong class="text-white">[Your Location]</strong>. My passion is transforming design ideas into fast, accessible, and intuitive applications on the web.
+              </p>
+              <p class="text-secondary-custom">
+                Rather than relying solely on heavy abstractions, I invest deeply in core web primitives: semantic HTML, modern responsive CSS architecture, and clean vanilla JavaScript.
+              </p>
+            </div>
+
+            <!-- UI/UX Focus Areas -->
+            <div class="mb-5">
+              <h3 class="h4 text-white mb-3 d-flex align-items-center gap-2">
+                <i class="bi bi-palette text-primary"></i>
+                <span>Frontend & UI/UX Principles</span>
+              </h3>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="p-3 rounded-3 bg-surface-elevated border border-subtle">
+                    <h4 class="h6 text-white mb-1"><i class="bi bi-layout-text-window-reverse text-info me-2"></i>Design Systems</h4>
+                    <p class="text-muted-custom small mb-0">Consistent design tokens, typography scales, and modular components.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-3 rounded-3 bg-surface-elevated border border-subtle">
+                    <h4 class="h6 text-white mb-1"><i class="bi bi-universal-access text-success me-2"></i>Accessibility (a11y)</h4>
+                    <p class="text-muted-custom small mb-0">WCAG color contrast, ARIA landmarks, and keyboard navigation.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-3 rounded-3 bg-surface-elevated border border-subtle">
+                    <h4 class="h6 text-white mb-1"><i class="bi bi-speedometer text-warning me-2"></i>Performance First</h4>
+                    <p class="text-muted-custom small mb-0">Low latency rendering, zero unnecessary scripts, and optimized assets.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="p-3 rounded-3 bg-surface-elevated border border-subtle">
+                    <h4 class="h6 text-white mb-1"><i class="bi bi-phone text-primary me-2"></i>Mobile Responsive</h4>
+                    <p class="text-muted-custom small mb-0">Fluid layouts tested across 320px mobile screens up to 4K monitors.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education (Editable Placeholders) -->
+            <div class="mb-4">
+              <h3 class="h4 text-white mb-3 d-flex align-items-center gap-2">
+                <i class="bi bi-mortarboard text-primary"></i>
+                <span>Education & Credentials</span>
+              </h3>
+              <div class="custom-card mb-3 p-3">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <div>
+                    <h5 class="text-white fs-6 mb-0">[Degree or Diploma Name]</h5>
+                    <div class="text-primary small">[Institution / University / Academy Name]</div>
+                  </div>
+                  <span class="badge bg-dark border border-secondary text-secondary">[Graduation Year]</span>
+                </div>
+                <p class="text-secondary-custom small mb-0">[Education Details: Coursework in Web Technologies & Software Fundamentals.]</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: SKILLS & TOOLKIT (#skills)
+         ==================================================================== -->
+    <section id="skills" class="section-padding bg-surface-subtle border-top border-dark" aria-labelledby="skillsHeading">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="row justify-content-center text-center section-header reveal-fade-up">
+          <div class="col-lg-8">
+            <span class="section-subtitle">Core Toolkit</span>
+            <h2 id="skillsHeading" class="mb-3">Skills & <span class="text-gradient">Technical Toolkit</span></h2>
+            <p class="text-secondary-custom">
+              Modern frontend foundations backed by solid understanding of core browser standards and developer workflows. No artificial percentages—just verified capabilities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Category 1: Core Frontend -->
+        <div class="mb-5 reveal-fade-up">
+          <h3 class="h5 text-white mb-3 d-flex align-items-center gap-2">
+            <i class="bi bi-window-sidebar text-primary"></i>
+            <span>Core Frontend Technologies</span>
+          </h3>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <div class="skill-card">
+                <i class="bi bi-filetype-html skill-icon text-danger"></i>
+                <div>
+                  <h4 class="text-white fs-6 mb-1">HTML5</h4>
+                  <p class="text-muted-custom small mb-2">Semantic landmarks, forms, accessibility.</p>
+                  <span class="tech-tag" style="font-size: 0.7rem;">Semantics</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="skill-card">
+                <i class="bi bi-filetype-css skill-icon text-primary"></i>
+                <div>
+                  <h4 class="text-white fs-6 mb-1">CSS3</h4>
+                  <p class="text-muted-custom small mb-2">Flexbox, CSS Grid, custom properties.</p>
+                  <span class="tech-tag" style="font-size: 0.7rem;">Flex & Grid</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="skill-card">
+                <i class="bi bi-filetype-js skill-icon text-warning"></i>
+                <div>
+                  <h4 class="text-white fs-6 mb-1">JavaScript (ES6+)</h4>
+                  <p class="text-muted-custom small mb-2">DOM APIs, async/await, closures.</p>
+                  <span class="tech-tag" style="font-size: 0.7rem;">Modern JS</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="skill-card">
+                <i class="bi bi-bootstrap-fill skill-icon text-info"></i>
+                <div>
+                  <h4 class="text-white fs-6 mb-1">Bootstrap 5</h4>
+                  <p class="text-muted-custom small mb-2">12-column grid, responsive utilities.</p>
+                  <span class="tech-tag" style="font-size: 0.7rem;">Responsive UI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Tools & Workflow -->
+        <div class="mb-5 reveal-fade-up">
+          <h3 class="h5 text-white mb-3 d-flex align-items-center gap-2">
+            <i class="bi bi-tools text-primary"></i>
+            <span>Developer Tools & Workflow</span>
+          </h3>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <div class="skill-card">
+                <i class="bi bi-git skill-icon text-danger"></i>
+                <div>
+                  <h4 class="text-white fs-6 mb-1">Git</h4>
+                  <p class="text-muted-custom small mb-2">Branching, commits, rebase.</p>
+                  <span class="tech-tag" style="font-size: 0.7rem;">Version Control</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="skill-card">
+                <i class="bi bi-github skill-icon text-light"></i>
+                <div>
+                  <h4 class="text-white fs-6 mb-1">GitHub</h4>
+                  <p class="text-muted-custom small mb-2">Repositories, pull requests, GH Pages.</p>
+                  <span class="tech-tag" style="font-size: 0.7rem;">Collaboration</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="skill-card">
+                <i class="bi bi-code-square skill-icon text-primary"></i>
+                <div>
+                  <h4 class="text-white fs-6 mb-1">VS Code</h4>
+                  <p class="text-muted-custom small mb-2">Live Server, debugger, snippets.</p>
+                  <span class="tech-tag" style="font-size: 0.7rem;">IDE Workflow</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="skill-card">
+                <i class="bi bi-terminal skill-icon text-success"></i>
+                <div>
+                  <h4 class="text-white fs-6 mb-1">Browser DevTools</h4>
+                  <p class="text-muted-custom small mb-2">Network, console, Lighthouse audit.</p>
+                  <span class="tech-tag" style="font-size: 0.7rem;">Inspection</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Exploratory & In-Progress -->
+        <div class="reveal-fade-up">
+          <h3 class="h5 text-white mb-3 d-flex align-items-center gap-2">
+            <i class="bi bi-compass-fill text-primary"></i>
+            <span>Exploratory & In-Progress</span>
+          </h3>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="custom-card p-3">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-layers-fill text-info fs-5"></i>
+                    <h5 class="text-white fs-6 mb-0">React (In Progress)</h5>
+                  </div>
+                  <span class="badge bg-warning-subtle text-warning border border-warning-subtle small">Editable Skill</span>
+                </div>
+                <p class="text-secondary-custom small mb-0">[Editable Skill Placeholder: Component lifecycle, JSX, hooks, state management.]</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="custom-card p-3">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-server text-secondary fs-5"></i>
+                    <h5 class="text-white fs-6 mb-0">Backend & API Integrations</h5>
+                  </div>
+                  <span class="badge bg-warning-subtle text-warning border border-warning-subtle small">Editable Skill</span>
+                </div>
+                <p class="text-secondary-custom small mb-0">[Editable Skill Placeholder: REST API consumo, server requests, environment setups.]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: FEATURED PROJECTS (#projects)
+         (Designed EXACTLY like the user's reference image!)
+         ==================================================================== -->
+    <section id="projects" class="section-padding border-top border-dark" aria-labelledby="projectsHeading">
+      <div class="container">
+        
+        <!-- Header exactly matching uploaded screenshot -->
+        <div class="text-center mb-5 reveal-fade-up">
+          <h2 id="projectsHeading" class="display-5 fw-bold text-white mb-2">Projects</h2>
+          <div class="title-accent-bar" aria-hidden="true"></div>
+          <p class="text-secondary-custom fs-6 mb-0">AI products and full-stack apps I've built end to end.</p>
+        </div>
+
+        <!-- 3-Column Card Grid Matching Reference Image -->
+        <div class="row g-4 mb-5">
+          
+          <!-- PROJECT 1: ChatMate (Cyan/Blue Theme) -->
+          <div class="col-lg-4 col-md-6 reveal-fade-up">
+            <article class="project-card-v2">
+              <!-- Dot-Grid Top Banner with Centered Icon -->
+              <div class="project-card-header-banner banner-cyan">
+                <div class="banner-icon-box icon-box-cyan">
+                  <i class="bi bi-chat-left-text"></i>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h3 class="h4 text-white fw-bold mb-2">ChatMate</h3>
+                <p class="text-secondary-custom small mb-4" style="line-height: 1.6;">
+                  A ChatGPT-style multi-LLM chat platform with real-time streaming, conversation branching, and tool calling across OpenAI and Gemini.
+                </p>
+
+                <!-- Tech Stack Pills -->
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="project-tag-pill">Next.js 16</span>
+                  <span class="project-tag-pill">React 19</span>
+                  <span class="project-tag-pill">TypeScript</span>
+                  <span class="project-tag-pill">Vercel AI SDK</span>
+                  <span class="project-tag-pill">OpenAI</span>
+                  <span class="project-tag-pill">Gemini</span>
+                </div>
+
+                <!-- Footer Action Links -->
+                <div class="project-card-footer-actions mt-auto">
+                  <a href="https://github.com/[GitHub URL]/chatmate" class="project-action-link" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github fs-5"></i> Code
+                  </a>
+                  <a href="#demo-chatmate" class="project-demo-link" target="_blank" rel="noopener noreferrer">
+                    Live Demo <i class="bi bi-box-arrow-up-right small"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- PROJECT 2: ChaiBookLM (Purple/Violet Theme) -->
+          <div class="col-lg-4 col-md-6 reveal-fade-up">
+            <article class="project-card-v2">
+              <!-- Dot-Grid Top Banner with Centered Icon -->
+              <div class="project-card-header-banner banner-violet">
+                <div class="banner-icon-box icon-box-violet">
+                  <i class="bi bi-book"></i>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h3 class="h4 text-white fw-bold mb-2">ChaiBookLM</h3>
+                <p class="text-secondary-custom small mb-4" style="line-height: 1.6;">
+                  A full-stack RAG research assistant inspired by Google NotebookLM — upload sources, build a knowledge base, and query it conversationally.
+                </p>
+
+                <!-- Tech Stack Pills -->
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="project-tag-pill">Next.js 16</span>
+                  <span class="project-tag-pill">Prisma</span>
+                  <span class="project-tag-pill">Neon</span>
+                  <span class="project-tag-pill">Qdrant</span>
+                  <span class="project-tag-pill">Cloudflare R2</span>
+                  <span class="project-tag-pill">Clerk</span>
+                </div>
+
+                <!-- Footer Action Links -->
+                <div class="project-card-footer-actions mt-auto">
+                  <a href="https://github.com/[GitHub URL]/chaibooklm" class="project-action-link" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github fs-5"></i> Code
+                  </a>
+                  <a href="#demo-chaibooklm" class="project-demo-link" target="_blank" rel="noopener noreferrer">
+                    Live Demo <i class="bi bi-box-arrow-up-right small"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- PROJECT 3: MentorOS (Amber/Gold Theme) -->
+          <div class="col-lg-4 col-md-6 reveal-fade-up">
+            <article class="project-card-v2">
+              <!-- Dot-Grid Top Banner with Centered Icon -->
+              <div class="project-card-header-banner banner-amber">
+                <div class="banner-icon-box icon-box-amber">
+                  <i class="bi bi-stars"></i>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <h3 class="h4 text-white fw-bold mb-2">MentorOS</h3>
+                <p class="text-secondary-custom small mb-4" style="line-height: 1.6;">
+                  An AI mentoring platform with dual mentor personas, YouTube tool integration, and multi-provider LLM routing with rate-limited access.
+                </p>
+
+                <!-- Tech Stack Pills -->
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="project-tag-pill">Next.js</span>
+                  <span class="project-tag-pill">PostgreSQL</span>
+                  <span class="project-tag-pill">Drizzle ORM</span>
+                  <span class="project-tag-pill">Clerk</span>
+                  <span class="project-tag-pill">Redis</span>
+                  <span class="project-tag-pill">OpenAI</span>
+                  <span class="project-tag-pill">Gemini</span>
+                </div>
+
+                <!-- Footer Action Links -->
+                <div class="project-card-footer-actions mt-auto">
+                  <a href="https://github.com/[GitHub URL]/mentoros" class="project-action-link" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github fs-5"></i> Code
+                  </a>
+                  <a href="#demo-mentoros" class="project-demo-link" target="_blank" rel="noopener noreferrer">
+                    Live Demo <i class="bi bi-box-arrow-up-right small"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Additional Frontend Showcase Collapsible / Extra Row -->
+        <div class="custom-card p-4 reveal-fade-up">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+            <div>
+              <h4 class="text-white mb-1"><i class="bi bi-folder-check text-primary me-2"></i>Frontend & UI Prototype Demonstrations</h4>
+              <p class="text-secondary-custom small mb-0">Also built: Chocolate Store (E-Commerce), Notes App (LocalStorage CRUD), and Auth System.</p>
+            </div>
+            <a href="projects.html" class="btn-custom-outline btn-custom-sm text-nowrap">
+              <span>View Frontend Demos</span>
+              <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: STATS & METRICS
+         ==================================================================== -->
+    <section class="section-padding-sm border-top border-bottom border-dark" style="background: rgba(17, 24, 39, 0.4);" aria-label="Developer Highlights">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-md-3 reveal-fade-up">
+            <div class="stat-number text-gradient">15+</div>
+            <div class="stat-label">Projects Built & Deployed</div>
+            <div class="text-muted-custom small" style="font-size: 0.75rem;">[Editable Value]</div>
+          </div>
+          <div class="col-6 col-md-3 reveal-fade-up">
+            <div class="stat-number text-gradient">2+</div>
+            <div class="stat-label">Years Dedicated Coding</div>
+            <div class="text-muted-custom small" style="font-size: 0.75rem;">[Editable Value]</div>
+          </div>
+          <div class="col-6 col-md-3 reveal-fade-up">
+            <div class="stat-number text-gradient">100%</div>
+            <div class="stat-label">Responsive & Mobile First</div>
+            <div class="text-muted-custom small" style="font-size: 0.75rem;">[Design Standard]</div>
+          </div>
+          <div class="col-6 col-md-3 reveal-fade-up">
+            <div class="stat-number text-gradient">95+</div>
+            <div class="stat-label">Lighthouse Best Practices</div>
+            <div class="text-muted-custom small" style="font-size: 0.75rem;">[Target Metric]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: BLOG & TECHNICAL NOTES (#blog)
+         ==================================================================== -->
+    <section id="blog" class="section-padding" aria-labelledby="blogHeading">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="row mb-5 reveal-fade-up">
+          <div class="col-lg-8">
+            <span class="section-subtitle">Articles & Notes</span>
+            <h2 id="blogHeading" class="mb-3">Technical <span class="text-gradient">Blog</span></h2>
+            <p class="lead text-secondary-custom">
+              Thoughts, tutorials, and practical breakdowns on frontend development, JavaScript architecture, and clean UI engineering.
+            </p>
+          </div>
+        </div>
+
+        <!-- Search & Filter Bar -->
+        <div class="custom-card p-3 p-md-4 mb-4 reveal-fade-up">
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-6">
+              <div class="position-relative">
+                <input type="text" id="blogSearchInput" class="blog-search-box ps-5" placeholder="Search articles by title or keyword..." aria-label="Search articles">
+                <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted-custom"></i>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="d-flex flex-wrap gap-2 justify-content-lg-end" role="group" aria-label="Filter blog by topic">
+                <button type="button" class="filter-btn blog-filter-btn active" data-category="all">All</button>
+                <button type="button" class="filter-btn blog-filter-btn" data-category="javascript">JavaScript</button>
+                <button type="button" class="filter-btn blog-filter-btn" data-category="css">CSS & Bootstrap</button>
+                <button type="button" class="filter-btn blog-filter-btn" data-category="career">Career</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="row g-4" id="blogGrid">
+          
+          <!-- Article 1 -->
+          <div class="col-md-6 col-lg-4 blog-col reveal-fade-up">
+            <article class="custom-card blog-article-card" data-category="javascript">
+              <span class="card-top-glow" aria-hidden="true"></span>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge bg-primary">JavaScript</span>
+                <span class="text-muted-custom small">Oct 2026</span>
+              </div>
+              <h3 class="h5 mb-2">
+                <a href="article.html" class="text-white text-decoration-none blog-title">Understanding JavaScript Fundamentals</a>
+              </h3>
+              <p class="text-secondary-custom small mb-4 blog-excerpt">
+                Unpacking execution contexts, closures, call stack, and asynchronous promises cooperate inside the browser runtime.
+              </p>
+              <div class="mt-auto pt-3 border-top border-subtle d-flex justify-content-between align-items-center">
+                <span class="text-muted-custom small"><i class="bi bi-clock me-1"></i>6 min read</span>
+                <a href="article.html" class="fw-semibold small text-primary">Read Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="col-md-6 col-lg-4 blog-col reveal-fade-up">
+            <article class="custom-card blog-article-card" data-category="css">
+              <span class="card-top-glow" aria-hidden="true"></span>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge bg-info text-dark">CSS & Bootstrap</span>
+                <span class="text-muted-custom small">Sep 2026</span>
+              </div>
+              <h3 class="h5 mb-2">
+                <a href="article.html" class="text-white text-decoration-none blog-title">Responsive Web Design with Bootstrap</a>
+              </h3>
+              <p class="text-secondary-custom small mb-4 blog-excerpt">
+                Techniques for utilizing Bootstrap 5's 12-column flexbox grid, responsive breakpoint modifiers, and custom CSS overrides.
+              </p>
+              <div class="mt-auto pt-3 border-top border-subtle d-flex justify-content-between align-items-center">
+                <span class="text-muted-custom small"><i class="bi bi-clock me-1"></i>4 min read</span>
+                <a href="article.html" class="fw-semibold small text-primary">Read Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="col-md-6 col-lg-4 blog-col reveal-fade-up">
+            <article class="custom-card blog-article-card" data-category="career">
+              <span class="card-top-glow" aria-hidden="true"></span>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge bg-success">Career</span>
+                <span class="text-muted-custom small">Aug 2026</span>
+              </div>
+              <h3 class="h5 mb-2">
+                <a href="article.html" class="text-white text-decoration-none blog-title">My Journey as a Frontend Developer</a>
+              </h3>
+              <p class="text-secondary-custom small mb-4 blog-excerpt">
+                Personal reflections, key learning milestones, debugging habits, and advice on building project-driven confidence.
+              </p>
+              <div class="mt-auto pt-3 border-top border-subtle d-flex justify-content-between align-items-center">
+                <span class="text-muted-custom small"><i class="bi bi-clock me-1"></i>5 min read</span>
+                <a href="article.html" class="fw-semibold small text-primary">Read Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <div id="noBlogResults" class="text-center py-4" style="display: none;">
+          <i class="bi bi-search fs-2 text-muted-custom mb-2 d-block"></i>
+          <h4 class="text-white fs-6 mb-1">No matching articles found</h4>
+          <p class="text-secondary-custom small">Try searching for keywords like "JavaScript" or "Bootstrap".</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: CONTACT (#contact)
+         ==================================================================== -->
+    <section id="contact" class="section-padding border-top border-dark bg-surface-subtle" aria-labelledby="contactHeading">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="row mb-5 reveal-fade-up">
+          <div class="col-lg-8">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 id="contactHeading" class="mb-3">Let's Work <span class="text-gradient">Together</span></h2>
+            <p class="lead text-secondary-custom">
+              Have an engineering opportunity, a freelance project, or want to discuss frontend ideas? Send a message through the form or reach out directly.
+            </p>
+          </div>
+        </div>
+
+        <!-- Two-Column Layout -->
+        <div class="row g-5 align-items-stretch">
+          
+          <!-- Left Column: Direct Info -->
+          <div class="col-lg-5 reveal-fade-up">
+            <div class="contact-info-card d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="h4 text-white mb-3">Contact Information</h3>
+                <p class="text-secondary-custom small mb-4">
+                  I typically respond within 24–48 hours. Feel free to copy my email or connect via professional platforms.
+                </p>
+
+                <!-- Email -->
+                <div class="contact-method-item">
+                  <div class="contact-method-icon" aria-hidden="true">
+                    <i class="bi bi-envelope-at-fill"></i>
+                  </div>
+                  <div>
+                    <div class="text-white fw-semibold small">Email Address</div>
+                    <a href="mailto:[Your Email]" class="text-secondary-custom small d-block mb-1">[Your Email]</a>
+                    <button type="button" class="btn-custom-outline btn-custom-sm btn-copy-email py-1 px-2" data-email="[Your Email]" style="font-size: 0.75rem;">
+                      <i class="bi bi-clipboard me-1"></i> Copy Email
+                    </button>
+                  </div>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-method-item">
+                  <div class="contact-method-icon" aria-hidden="true">
+                    <i class="bi bi-linkedin"></i>
+                  </div>
+                  <div>
+                    <div class="text-white fw-semibold small">LinkedIn Network</div>
+                    <a href="https://linkedin.com/in/[LinkedIn URL]" target="_blank" rel="noopener noreferrer" class="text-secondary-custom small d-block">
+                      linkedin.com/in/[LinkedIn URL]
+                    </a>
+                    <span class="text-muted-custom" style="font-size: 0.75rem;">Connect for engineering roles</span>
+                  </div>
+                </div>
+
+                <!-- GitHub -->
+                <div class="contact-method-item">
+                  <div class="contact-method-icon" aria-hidden="true">
+                    <i class="bi bi-github"></i>
+                  </div>
+                  <div>
+                    <div class="text-white fw-semibold small">GitHub Repositories</div>
+                    <a href="https://github.com/[GitHub URL]" target="_blank" rel="noopener noreferrer" class="text-secondary-custom small d-block">
+                      github.com/[GitHub URL]
+                    </a>
+                    <span class="text-muted-custom" style="font-size: 0.75rem;">Explore code commits & projects</span>
+                  </div>
+                </div>
+
+                <!-- Location -->
+                <div class="contact-method-item">
+                  <div class="contact-method-icon" aria-hidden="true">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div>
+                    <div class="text-white fw-semibold small">Location & Timezone</div>
+                    <div class="text-secondary-custom small">[Your Location]</div>
+                    <span class="text-muted-custom" style="font-size: 0.75rem;">Open to remote & on-site positions</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Availability Status -->
+              <div class="p-3 rounded-3 mt-4" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25);">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="status-dot"></span>
+                  <span class="text-success fw-semibold small">Immediate Availability</span>
+                </div>
+                <p class="text-secondary-custom mb-0" style="font-size: 0.8rem;">
+                  Open to full-time junior positions, internships, and freelance projects.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Form -->
+          <div class="col-lg-7 reveal-fade-up">
+            <div class="custom-card p-4 p-md-5">
+              <h3 class="h4 text-white mb-2">Send a Message</h3>
+              <p class="text-secondary-custom small mb-4">
+                Fill out the fields below. Client-side validation ensures all required details are captured.
+              </p>
+
+              <!-- Success Alert -->
+              <div id="formSuccessAlert" class="form-alert form-alert-success" role="alert">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="bi bi-check-circle-fill fs-5"></i>
+                  <div>
+                    <strong>Message validated successfully!</strong>
+                    <p class="mb-0 mt-1" style="font-size: 0.85rem;">
+                      Your message was processed and validated. <em>Notice: For production email delivery, connect this form to a backend service like Formspree or EmailJS.</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Error Alert -->
+              <div id="formErrorAlert" class="form-alert form-alert-error" role="alert">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+                  <span>Please correct the highlighted fields before submitting.</span>
+                </div>
+              </div>
+
+              <!-- Form -->
+              <form id="portfolioContactForm" novalidate>
+                <div class="row g-3">
+                  <!-- Name Field -->
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label-custom">
+                      Full Name <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" id="contactName" class="form-control-custom" placeholder="e.g. Jane Doe" required autocomplete="name">
+                    <div class="invalid-feedback-custom">Please enter your name (min 2 characters).</div>
+                  </div>
+
+                  <!-- Email Field -->
+                  <div class="col-md-6">
+                    <label for="contactEmail" class="form-label-custom">
+                      Email Address <span class="text-danger">*</span>
+                    </label>
+                    <input type="email" id="contactEmail" class="form-control-custom" placeholder="name@domain.com" required autocomplete="email">
+                    <div class="invalid-feedback-custom">Please enter a valid email address.</div>
+                  </div>
+
+                  <!-- Subject Field -->
+                  <div class="col-12">
+                    <label for="contactSubject" class="form-label-custom">
+                      Subject <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" id="contactSubject" class="form-control-custom" placeholder="e.g. Frontend Engineering Opportunity" required>
+                    <div class="invalid-feedback-custom">Please enter a subject (min 3 characters).</div>
+                  </div>
+
+                  <!-- Message Field -->
+                  <div class="col-12">
+                    <label for="contactMessage" class="form-label-custom">
+                      Message <span class="text-danger">*</span>
+                    </label>
+                    <textarea id="contactMessage" class="form-control-custom" rows="5" placeholder="Share details about your project or role..." required></textarea>
+                    <div class="invalid-feedback-custom">Please write a message with at least 10 characters.</div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="col-12 pt-2">
+                    <button type="submit" class="btn-custom-primary w-100 py-3">
+                      <i class="bi bi-send-fill me-1"></i> Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="mt-4 pt-3 border-top border-subtle">
+                <div class="d-flex align-items-start gap-2 text-muted-custom" style="font-size: 0.775rem;">
+                  <i class="bi bi-info-circle text-primary mt-1"></i>
+                  <span>
+                    <strong>Static Form Notice:</strong> This portfolio runs client-side. To receive real emails in production, set the form <code>action</code> attribute to a free service like Formspree, Web3Forms, or EmailJS.
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER (Clean Branding: vishnu.dev)
+       ====================================================================== -->
+  <footer class="custom-footer">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <!-- Brand & Summary -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center mb-3">
+            <span class="fw-bold text-white fs-5">vishnu<span class="text-gradient">.dev</span></span>
+          </div>
+          <p class="text-secondary-custom small mb-3">
+            Frontend Web Developer passionate about building fast, accessible, responsive websites and intuitive user interfaces.
+          </p>
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-dark border border-secondary text-secondary">[Your Location]</span>
+            <span class="badge bg-dark border border-secondary text-secondary">[Your Professional Title]</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="text-white fs-6 mb-3">Navigation</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#skills" class="footer-link">Skills</a></li>
+            <li><a href="#projects" class="footer-link">Projects</a></li>
+            <li><a href="#blog" class="footer-link">Blog</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect Links -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <h5 class="text-white fs-6 mb-3">Connect</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 small">
+            <li>
+              <a href="https://github.com/[GitHub URL]" class="footer-link" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github me-1"></i> GitHub: /[GitHub URL]
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/[LinkedIn URL]" class="footer-link" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin me-1"></i> LinkedIn Profile
+              </a>
+            </li>
+            <li>
+              <a href="mailto:[Your Email]" class="footer-link">
+                <i class="bi bi-envelope me-1"></i> [Your Email]
+              </a>
+            </li>
+            <li>
+              <a href="#resume-placeholder" class="footer-link">
+                <i class="bi bi-file-earmark-pdf me-1"></i> Download Resume
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Fast Actions -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white fs-6 mb-3">Direct Contact</h5>
+          <p class="text-secondary-custom small mb-2">Have a quick question? Copy my email directly or send a message.</p>
+          <button type="button" class="btn-custom-outline btn-custom-sm w-100 btn-copy-email" data-email="[Your Email]">
+            <i class="bi bi-clipboard me-1"></i> Copy [Your Email]
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">© 2026 vishnu.dev. All rights reserved.</p>
+        <p class="mb-0">Built with semantic HTML5, CSS3, Vanilla JS & Bootstrap 5.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" id="backToTopBtn" class="back-to-top" aria-label="Back to Top" title="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Copy Notification Toast -->
+  <div id="copyToast" class="copy-toast" role="status" aria-live="polite">
+    <i class="bi bi-check-circle-fill text-success"></i>
+    <span>Email copied to clipboard!</span>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Custom Interactive JS -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
