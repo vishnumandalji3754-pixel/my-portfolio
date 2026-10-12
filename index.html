@@ -171,126 +171,247 @@
     <!-- ====================================================================
          SECTION 2: ABOUT ME (#about)
          ==================================================================== -->
+    <!-- ====================================================================
+         SECTION 2: ABOUT ME (#about) — Premium Bento-Grid Architecture
+         ==================================================================== -->
     <section id="about" class="section-padding border-top border-dark" aria-labelledby="aboutHeading">
       <div class="container">
         
         <!-- Section Header -->
-        <div class="row mb-5 reveal-fade-up">
-          <div class="col-lg-8">
-            <span class="section-subtitle">Biography & Mindset</span>
-            <h2 id="aboutHeading" class="mb-3">About <span class="text-gradient">Vishnu</span></h2>
-            <p class="lead text-secondary-custom">
-              A developer dedicated to building responsive interfaces with precision, empathy for users, and a deep appreciation for web fundamentals.
-            </p>
-          </div>
+        <div class="text-center mb-5 reveal-fade-up">
+          <span class="section-subtitle">Biography & Engineering Mindset</span>
+          <h2 id="aboutHeading" class="display-5 fw-bold text-white mb-2">About <span class="text-gradient">Vishnu</span></h2>
+          <div class="title-accent-bar" aria-hidden="true"></div>
+          <p class="text-secondary-custom fs-6 mb-0" style="max-width: 650px; margin: 0 auto;">
+            Engineering intuitive, pixel-perfect web interfaces with modern frontend technologies and human-centered design.
+          </p>
         </div>
 
-        <!-- Two-Column Layout -->
-        <div class="row g-5 align-items-start">
-          <!-- Left Column: Profile Card -->
-          <div class="col-lg-5 reveal-fade-up">
-            <div class="custom-card sticky-top" style="top: 6.5rem; z-index: 1;">
-              <div class="text-center mb-4">
-                <img src="assets/images/profile.jpg" alt="Profile of Vishnu" class="img-fluid rounded-circle mb-3 border border-2 border-primary shadow" style="width: 200px; height: 200px; object-fit: cover;">
-                <h3 class="h4 mb-1 text-white">Vishnu</h3>
-                <p class="text-gradient fw-medium mb-2">[Your Professional Title]</p>
-                <div class="d-flex justify-content-center gap-2 mb-3">
-                  <span class="badge bg-dark border border-secondary text-secondary">[Your Location]</span>
-                  <span class="badge bg-success-subtle border border-success-subtle text-success">Open to Work</span>
-                </div>
-              </div>
-
-              <div class="border-top border-secondary pt-3">
-                <h5 class="text-white fs-6 mb-3">Quick Facts</h5>
-                <ul class="list-unstyled small d-flex flex-column gap-2 text-secondary-custom mb-4">
-                  <li><strong class="text-white">Specialization:</strong> Frontend Engineering & UI Design</li>
-                  <li><strong class="text-white">Core Languages:</strong> HTML5, CSS3, JavaScript (ES6+)</li>
-                  <li><strong class="text-white">Styling Framework:</strong> Bootstrap 5</li>
-                  <li><strong class="text-white">Primary Editor:</strong> VS Code & DevTools</li>
-                  <li><strong class="text-white">Philosophy:</strong> Accessible, Clean & Fast</li>
-                </ul>
-
-                <div class="d-grid gap-2">
-                  <a href="#contact" class="btn-custom-primary">
-                    <i class="bi bi-send-fill me-1"></i> Let's Work Together
-                  </a>
-                  <a href="#resume-placeholder" class="btn-custom-outline">
-                    <i class="bi bi-file-earmark-arrow-down me-1"></i> Download Resume ([Resume File])
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Story & Philosophy -->
+        <!-- Row 1: The Narrative Card (7-cols) + Interactive Code Config Terminal (5-cols) -->
+        <div class="row g-4 mb-4 align-items-stretch">
+          
+          <!-- Narrative & Engineering Philosophy (Left) -->
           <div class="col-lg-7 reveal-fade-up">
-            <!-- Background -->
-            <div class="mb-5">
-              <h3 class="h4 text-white mb-3 d-flex align-items-center gap-2">
-                <i class="bi bi-person-badge text-primary"></i>
-                <span>Developer Background</span>
-              </h3>
-              <p class="text-secondary-custom">
-                Hello! I am a frontend developer based in <strong class="text-white">[Your Location]</strong>. My passion is transforming design ideas into fast, accessible, and intuitive applications on the web.
-              </p>
-              <p class="text-secondary-custom">
-                Rather than relying solely on heavy abstractions, I invest deeply in core web primitives: semantic HTML, modern responsive CSS architecture, and clean vanilla JavaScript.
-              </p>
-            </div>
+            <div class="bento-card">
+              <span class="card-top-glow" aria-hidden="true"></span>
+              <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill small">
+                  <i class="bi bi-code-slash me-1"></i> Frontend Engineer & UI Specialist
+                </span>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill small">
+                  <span class="status-dot-sm bg-success me-1"></span> Open to Opportunities
+                </span>
+              </div>
 
-            <!-- UI/UX Focus Areas -->
-            <div class="mb-5">
-              <h3 class="h4 text-white mb-3 d-flex align-items-center gap-2">
-                <i class="bi bi-palette text-primary"></i>
-                <span>Frontend & UI/UX Principles</span>
+              <h3 class="h3 text-white fw-bold mb-3">
+                Bridging the gap between creative design systems and production-grade code.
               </h3>
-              <div class="row g-3">
+
+              <p class="text-secondary-custom mb-3" style="line-height: 1.75;">
+                Hello! I am a passionate frontend web developer based in <strong class="text-white">[Your Location]</strong>. I specialize in transforming conceptual UI designs and wireframes into clean, accessible, high-performance digital products that users love.
+              </p>
+
+              <p class="text-secondary-custom mb-4" style="line-height: 1.75;">
+                Rather than relying on oversized libraries or bloated templates, I focus on the fundamental superpowers of the modern web: semantic HTML5 architecture, responsive CSS layout engines (Flexbox & CSS Grid), and reactive vanilla JavaScript logic.
+              </p>
+
+              <!-- Value Points Grid -->
+              <div class="row g-3 mb-4">
                 <div class="col-sm-6">
-                  <div class="p-3 rounded-3 bg-surface-elevated border border-subtle">
-                    <h4 class="h6 text-white mb-1"><i class="bi bi-layout-text-window-reverse text-info me-2"></i>Design Systems</h4>
-                    <p class="text-muted-custom small mb-0">Consistent design tokens, typography scales, and modular components.</p>
+                  <div class="d-flex align-items-start gap-2 text-secondary-custom small">
+                    <i class="bi bi-check-circle-fill text-primary mt-1"></i>
+                    <span><strong>100% Fluid & Mobile-First:</strong> Tested rigorously from 320px screens to ultra-wide displays.</span>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="p-3 rounded-3 bg-surface-elevated border border-subtle">
-                    <h4 class="h6 text-white mb-1"><i class="bi bi-universal-access text-success me-2"></i>Accessibility (a11y)</h4>
-                    <p class="text-muted-custom small mb-0">WCAG color contrast, ARIA landmarks, and keyboard navigation.</p>
+                  <div class="d-flex align-items-start gap-2 text-secondary-custom small">
+                    <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                    <span><strong>Inclusive Accessibility:</strong> WCAG contrast, logical keyboard tab stops & ARIA landmarks.</span>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="p-3 rounded-3 bg-surface-elevated border border-subtle">
-                    <h4 class="h6 text-white mb-1"><i class="bi bi-speedometer text-warning me-2"></i>Performance First</h4>
-                    <p class="text-muted-custom small mb-0">Low latency rendering, zero unnecessary scripts, and optimized assets.</p>
+                  <div class="d-flex align-items-start gap-2 text-secondary-custom small">
+                    <i class="bi bi-check-circle-fill text-info mt-1"></i>
+                    <span><strong>Performance Driven:</strong> Fast initial paints, optimized media assets & zero layout shifts.</span>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="p-3 rounded-3 bg-surface-elevated border border-subtle">
-                    <h4 class="h6 text-white mb-1"><i class="bi bi-phone text-primary me-2"></i>Mobile Responsive</h4>
-                    <p class="text-muted-custom small mb-0">Fluid layouts tested across 320px mobile screens up to 4K monitors.</p>
+                  <div class="d-flex align-items-start gap-2 text-secondary-custom small">
+                    <i class="bi bi-check-circle-fill text-warning mt-1"></i>
+                    <span><strong>Design System Alignment:</strong> Reusable tokens, consistent typography & clean components.</span>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Education (Editable Placeholders) -->
-            <div class="mb-4">
-              <h3 class="h4 text-white mb-3 d-flex align-items-center gap-2">
-                <i class="bi bi-mortarboard text-primary"></i>
-                <span>Education & Credentials</span>
-              </h3>
-              <div class="custom-card mb-3 p-3">
-                <div class="d-flex justify-content-between align-items-start mb-1">
-                  <div>
-                    <h5 class="text-white fs-6 mb-0">[Degree or Diploma Name]</h5>
-                    <div class="text-primary small">[Institution / University / Academy Name]</div>
-                  </div>
-                  <span class="badge bg-dark border border-secondary text-secondary">[Graduation Year]</span>
-                </div>
-                <p class="text-secondary-custom small mb-0">[Education Details: Coursework in Web Technologies & Software Fundamentals.]</p>
+              <!-- Action Link -->
+              <div class="d-flex flex-wrap gap-3 mt-auto pt-2">
+                <a href="#projects" class="btn-custom-primary btn-custom-sm">
+                  <span>View Projects</span>
+                  <i class="bi bi-arrow-down ms-1"></i>
+                </a>
+                <a href="#contact" class="btn-custom-outline btn-custom-sm">
+                  <span>Get In Touch</span>
+                  <i class="bi bi-chat-dots ms-1"></i>
+                </a>
               </div>
             </div>
-
           </div>
+
+          <!-- Interactive Developer Code Terminal (Right) -->
+          <div class="col-lg-5 reveal-fade-up">
+            <div class="terminal-window d-flex flex-column">
+              <!-- Window Top Bar -->
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <div class="terminal-title">vishnu.config.js</div>
+                <div class="text-muted-custom small" style="font-size: 0.7rem;">ES6 Module</div>
+              </div>
+
+              <!-- Terminal Syntax Highlighted Body -->
+              <pre class="terminal-code flex-grow-1"><code><span class="text-secondary">// Developer Profile Configuration</span>
+<span class="text-primary">const</span> <span class="text-info">developer</span> = {
+  <span class="text-warning">name</span>: <span class="text-success">"Vishnu"</span>,
+  <span class="text-warning">role</span>: <span class="text-success">"Frontend Web Developer"</span>,
+  <span class="text-warning">location</span>: <span class="text-success">"[Your Location]"</span>,
+  <span class="text-warning">status</span>: <span class="text-success">"Available for Opportunities"</span>,
+  
+  <span class="text-warning">coreToolkit</span>: [
+    <span class="text-success">"JavaScript (ES6+)"</span>,
+    <span class="text-success">"HTML5 Semantic Markup"</span>,
+    <span class="text-success">"Modern CSS3 &amp; Flex/Grid"</span>,
+    <span class="text-success">"Bootstrap 5 Framework"</span>,
+    <span class="text-success">"Git &amp; Developer Tools"</span>
+  ],
+
+  <span class="text-warning">engineeringFocus</span>: {
+    <span class="text-warning">responsive</span>: <span class="text-info">true</span>,
+    <span class="text-warning">performanceScore</span>: <span class="text-info">95+</span>,
+    <span class="text-warning">accessibleDesign</span>: <span class="text-info">true</span>,
+    <span class="text-warning">cleanCodebase</span>: <span class="text-info">true</span>
+  },
+
+  <span class="text-warning">contact</span>: () =&gt; {
+    <span class="text-primary">return</span> <span class="text-success">"[Your Email]"</span>;
+  }
+};
+
+<span class="text-secondary">// Ready to contribute &amp; collaborate</span>
+<span class="text-primary">export default</span> developer;</code></pre>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row 2: 3 Bento Columns (Mindset, Education, Team Value) -->
+        <div class="row g-4">
+          
+          <!-- Bento Card 1: Problem-Solving Framework -->
+          <div class="col-lg-4 col-md-6 reveal-fade-up">
+            <div class="bento-card">
+              <span class="card-top-glow" aria-hidden="true"></span>
+              <div class="bento-icon-wrapper bento-icon-violet">
+                <i class="bi bi-cpu-fill"></i>
+              </div>
+              <h4 class="h5 text-white fw-bold mb-2">Engineering Mindset</h4>
+              <p class="text-secondary-custom small mb-4">
+                A structured, disciplined methodology for tackling ambiguous requirements and building durable user interfaces.
+              </p>
+
+              <div class="mt-auto">
+                <div class="timeline-pill-item">
+                  <span class="timeline-pill-badge">01</span>
+                  <div>
+                    <strong class="text-white small d-block">Deconstruct &amp; Analyze</strong>
+                    <span class="text-muted-custom" style="font-size: 0.775rem;">Break requirements down into layout, state flow, and edge cases.</span>
+                  </div>
+                </div>
+                <div class="timeline-pill-item">
+                  <span class="timeline-pill-badge">02</span>
+                  <div>
+                    <strong class="text-white small d-block">Semantic &amp; Modular Build</strong>
+                    <span class="text-muted-custom" style="font-size: 0.775rem;">Code clean components, readable CSS, and decoupled JS modules.</span>
+                  </div>
+                </div>
+                <div class="timeline-pill-item mb-0">
+                  <span class="timeline-pill-badge">03</span>
+                  <div>
+                    <strong class="text-white small d-block">Audit &amp; Optimize</strong>
+                    <span class="text-muted-custom" style="font-size: 0.775rem;">Profile performance, test keyboard accessibility &amp; multi-browser QA.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Academic & Continuous Learning -->
+          <div class="col-lg-4 col-md-6 reveal-fade-up">
+            <div class="bento-card">
+              <span class="card-top-glow" aria-hidden="true"></span>
+              <div class="bento-icon-wrapper bento-icon-cyan">
+                <i class="bi bi-mortarboard-fill"></i>
+              </div>
+              <h4 class="h5 text-white fw-bold mb-2">Education &amp; Growth</h4>
+              <p class="text-secondary-custom small mb-4">
+                Combining foundational technical education with daily real-world project practice and skill sharpening.
+              </p>
+
+              <div class="mt-auto">
+                <div class="timeline-pill-item">
+                  <i class="bi bi-award text-info mt-1"></i>
+                  <div>
+                    <strong class="text-white small d-block">[Degree or Diploma Name]</strong>
+                    <span class="text-primary small d-block">[Institution / University]</span>
+                    <span class="text-muted-custom" style="font-size: 0.75rem;">[Graduation Year / In Progress]</span>
+                  </div>
+                </div>
+                <div class="timeline-pill-item mb-0">
+                  <i class="bi bi-lightning-charge text-warning mt-1"></i>
+                  <div>
+                    <strong class="text-white small d-block">Frontend Specialization</strong>
+                    <span class="text-secondary-custom small d-block">Self-directed software curriculum</span>
+                    <span class="text-muted-custom" style="font-size: 0.75rem;">15+ projects built, daily git commits</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 3: Team Value & Immediate Availability -->
+          <div class="col-lg-4 col-md-12 reveal-fade-up">
+            <div class="bento-card">
+              <span class="card-top-glow" aria-hidden="true"></span>
+              <div class="bento-icon-wrapper bento-icon-green">
+                <i class="bi bi-rocket-takeoff-fill"></i>
+              </div>
+              <h4 class="h5 text-white fw-bold mb-2">What I Bring to Your Team</h4>
+              <p class="text-secondary-custom small mb-3">
+                High motivation, fast adaptability, and a proactive problem-solving spirit ready to contribute from day one.
+              </p>
+
+              <ul class="list-unstyled small d-flex flex-column gap-2 text-secondary-custom mb-4">
+                <li class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check2 text-success"></i> Clear communication and git workflow hygiene
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check2 text-success"></i> Passion for writing readable, self-documenting code
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check2 text-success"></i> Empathy for users and collaborative team mindset
+                </li>
+              </ul>
+
+              <div class="mt-auto">
+                <a href="#resume-placeholder" class="btn-custom-outline btn-custom-sm w-100 text-center">
+                  <i class="bi bi-file-earmark-arrow-down me-1"></i> Download Resume ([Resume File])
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
