@@ -1,16 +1,18 @@
 /**
  * ============================================================================
- * Developer Portfolio - Interactive Scripts
- * Technology: Vanilla JavaScript (ES6+)
+ * PREMIUM SINGLE-PAGE DEVELOPER PORTFOLIO - MAIN SCRIPT
+ * Stack: HTML5, CSS3, Vanilla JavaScript (ES6+)
  * Features:
- *   - Sticky Navbar Scroll Observer & Mobile Auto-close
- *   - Active Navigation Link State Handler
- *   - Subtle Scroll Reveal via IntersectionObserver
- *   - Project Filter Tabs (All, Websites, Applications)
- *   - Blog Search Filtering & Category Filter Tabs
- *   - Contact Form Validation & Feedback Simulation
- *   - Email Clipboard Copy with Notification Toast
- *   - Smooth Back-to-Top Button
+ *   1. Scroll Progress Bar Indicator
+ *   2. Sticky Navbar Glassmorphism & Mobile Menu Auto-Close
+ *   3. Active Section ScrollSpy via IntersectionObserver
+ *   4. Typewriter Rotating Text in Hero
+ *   5. Scroll Reveal Animations via IntersectionObserver
+ *   6. Back-to-Top Button Handler
+ *   7. Client-Side Contact Form Validation & Prefilled Mailto Trigger
+ *   8. One-Click Email Copy to Clipboard
+ *   9. Dynamic Footer Year
+ *  10. Dark / Light Mode Theme Toggle with LocalStorage Persistence
  * ============================================================================
  */
 
@@ -18,76 +20,154 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   // --------------------------------------------------------------------------
-  // 0. Dark / Light Theme Toggle & Persistence
+  // 1. CONFIGURATION & PLACEHOLDERS
   // --------------------------------------------------------------------------
-  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
-  const storedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', storedTheme);
-
-  const updateThemeUI = (theme) => {
-    themeToggleBtns.forEach((btn) => {
-      const icon = btn.querySelector('i');
-      if (icon) {
-        if (theme === 'light') {
-          icon.className = 'bi bi-sun-fill text-warning';
-          btn.setAttribute('title', 'Switch to dark mode');
-          btn.setAttribute('aria-label', 'Switch to dark mode');
-        } else {
-          icon.className = 'bi bi-moon';
-          btn.setAttribute('title', 'Switch to light mode');
-          btn.setAttribute('aria-label', 'Switch to light mode');
-        }
-      }
-    });
+  const CONFIG = {
+    developerEmail: 'vishnumandalji3754@gmail.com',
+    roles: [
+      'Frontend Developer',
+      'Web Developer',
+      'JavaScript Developer',
+      'UI Enthusiast'
+    ],
+    typingSpeed: 100,
+    erasingSpeed: 50,
+    pauseBetweenWords: 2000,
+    pauseBeforeType: 500
   };
 
-  updateThemeUI(storedTheme);
+  // --------------------------------------------------------------------------
+  // 2. THEME TOGGLE (DARK / LIGHT MODE)
+  // --------------------------------------------------------------------------
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const htmlRoot = document.documentElement;
 
-  themeToggleBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', targetTheme);
-      localStorage.setItem('portfolio-theme', targetTheme);
-      updateThemeUI(targetTheme);
+  // Initialize theme from localStorage or system preference
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme) {
+    htmlRoot.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+  } else {
+    // Default to premium dark theme
+    htmlRoot.setAttribute('data-theme', 'dark');
+    updateThemeIcon('dark');
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlRoot.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      htmlRoot.setAttribute('data-theme', newTheme);
+      localStorage.setItem('portfolio-theme', newTheme);
+      updateThemeIcon(newTheme);
     });
-  });
+  }
 
-  // --------------------------------------------------------------------------
-  // 1. Sticky Navbar & Mobile Navigation Enhancements
-  // --------------------------------------------------------------------------
-  const navbar = document.querySelector('.custom-navbar');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  const handleNavbarScroll = () => {
-    if (!navbar) return;
-    if (window.scrollY > 20) {
-      navbar.classList.add('scrolled');
+  function updateThemeIcon(theme) {
+    if (!themeIcon) return;
+    if (theme === 'light') {
+      themeIcon.className = 'bi bi-sun';
+      themeToggleBtn.setAttribute('title', 'Switch to dark theme');
+      themeToggleBtn.setAttribute('aria-label', 'Switch to dark theme');
     } else {
-      navbar.classList.remove('scrolled');
+      themeIcon.className = 'bi bi-moon-stars';
+      themeToggleBtn.setAttribute('title', 'Switch to light theme');
+      themeToggleBtn.setAttribute('aria-label', 'Switch to light theme');
     }
-  };
+  }
 
-  window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-  handleNavbarScroll(); // Initial check on load
+  // --------------------------------------------------------------------------
+  // 3. SCROLL PROGRESS BAR & STICKY NAVBAR
+  // --------------------------------------------------------------------------
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  const mainNavbar = document.getElementById('mainNavbar');
+  const backToTopBtn = document.getElementById('backToTopBtn');
 
-  // Close Bootstrap mobile navbar when clicking any link
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // Progress bar width
+    if (scrollProgressBar && scrollHeight > 0) {
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      scrollProgressBar.style.width = `${scrollPercent}%`;
+    }
+
+    // Sticky navbar backdrop blur styling
+    if (mainNavbar) {
+      if (scrollTop > 40) {
+        mainNavbar.classList.add('navbar-scrolled');
+      } else {
+        mainNavbar.classList.remove('navbar-scrolled');
+      }
+    }
+
+    // Back to top button visibility
+    if (backToTopBtn) {
+      if (scrollTop > 350) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    }
+  }, { passive: true });
+
+  // Back to top click handler
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // 4. MOBILE NAVIGATION AUTO-CLOSE & SMOOTH SCROLLING
+  // --------------------------------------------------------------------------
+  const navLinks = document.querySelectorAll('.custom-navbar .nav-link:not(.external-link)');
+  const navbarCollapse = document.getElementById('navbarNav');
+
   navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      
+      // Auto-collapse mobile navbar if open
       if (navbarCollapse && navbarCollapse.classList.contains('show')) {
         const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
         if (bsCollapse) {
           bsCollapse.hide();
         }
       }
+
+      // Smooth scroll with navbar height compensation
+      if (targetId && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const navHeight = mainNavbar ? mainNavbar.offsetHeight : 70;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - navHeight + 2;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Set focus for accessibility without visible jerk
+          targetElement.setAttribute('tabindex', '-1');
+          targetElement.focus({ preventScroll: true });
+        }
+      }
     });
   });
 
-  // Close mobile navbar when pressing ESC key for accessibility
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && navbarCollapse && navbarCollapse.classList.contains('show')) {
+  // Close mobile navbar on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navbarCollapse && navbarCollapse.classList.contains('show')) {
       const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
       if (bsCollapse) {
         bsCollapse.hide();
@@ -96,245 +176,140 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 2. Single Page Scrollspy & Active Navigation State
+  // 5. ACTIVE NAVIGATION SCROLLSPY (IntersectionObserver)
   // --------------------------------------------------------------------------
-  const sections = document.querySelectorAll('section[id], header[id]');
-
-  const updateActiveNavLinkOnScroll = () => {
-    let currentSectionId = '';
-    const scrollPosition = window.scrollY + 120;
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        currentSectionId = section.getAttribute('id');
-      }
-    });
-
-    if (currentSectionId) {
-      navLinks.forEach((link) => {
-        const href = link.getAttribute('href');
-        if (href === `#${currentSectionId}`) {
-          link.classList.add('active');
-          link.setAttribute('aria-current', 'page');
-        } else if (href && href.startsWith('#')) {
-          link.classList.remove('active');
-          link.removeAttribute('aria-current');
-        }
-      });
-    }
-  };
-
-  window.addEventListener('scroll', updateActiveNavLinkOnScroll, { passive: true });
-  updateActiveNavLinkOnScroll();
-
-  // --------------------------------------------------------------------------
-  // 3. Subtle Reveal on Scroll (IntersectionObserver)
-  // --------------------------------------------------------------------------
-  const revealElements = document.querySelectorAll('.reveal-fade-up');
-
-  if (revealElements.length > 0) {
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          rootMargin: '0px 0px -40px 0px',
-          threshold: 0.1,
-        }
-      );
-
-      revealElements.forEach((el) => revealObserver.observe(el));
-    } else {
-      // Fallback or user prefers reduced motion: reveal immediately
-      revealElements.forEach((el) => el.classList.add('revealed'));
-    }
-  }
-
-  // --------------------------------------------------------------------------
-  // 4. Back to Top Button
-  // --------------------------------------------------------------------------
-  const backToTopBtn = document.getElementById('backToTopBtn');
-
-  if (backToTopBtn) {
-    const toggleBackToTop = () => {
-      if (window.scrollY > 350) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
+  const sections = document.querySelectorAll('section[id]');
+  
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    const sectionObserverOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
     };
 
-    window.addEventListener('scroll', toggleBackToTop, { passive: true });
-
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    });
-  }
-
-  // --------------------------------------------------------------------------
-  // 5. Project Filtering (projects.html & index.html featured)
-  // --------------------------------------------------------------------------
-  const projectFilterBtns = document.querySelectorAll('.project-filter-btn');
-  const projectCards = document.querySelectorAll('.project-item');
-  const emptyProjectsNotice = document.getElementById('noProjectsNotice');
-
-  if (projectFilterBtns.length > 0 && projectCards.length > 0) {
-    projectFilterBtns.forEach((button) => {
-      button.addEventListener('click', () => {
-        // Active button toggle
-        projectFilterBtns.forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const selectedFilter = button.getAttribute('data-filter');
-        let visibleCount = 0;
-
-        projectCards.forEach((card) => {
-          const category = card.getAttribute('data-category');
-          if (selectedFilter === 'all' || category === selectedFilter) {
-            card.style.display = 'block';
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            }, 10);
-            visibleCount++;
-          } else {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(10px)';
-            card.style.display = 'none';
-          }
-        });
-
-        if (emptyProjectsNotice) {
-          emptyProjectsNotice.style.display = visibleCount === 0 ? 'block' : 'none';
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const currentId = entry.target.getAttribute('id');
+          navLinks.forEach((link) => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === `#${currentId}`) {
+              link.classList.add('active');
+              link.setAttribute('aria-current', 'page');
+            } else {
+              link.classList.remove('active');
+              link.removeAttribute('aria-current');
+            }
+          });
         }
       });
+    }, sectionObserverOptions);
+
+    sections.forEach((section) => {
+      sectionObserver.observe(section);
     });
   }
 
   // --------------------------------------------------------------------------
-  // 6. Blog Search & Category Filters (blog.html)
+  // 6. TYPEWRITER EFFECT IN HERO SECTION
   // --------------------------------------------------------------------------
-  const blogSearchInput = document.getElementById('blogSearchInput');
-  const blogFilterBtns = document.querySelectorAll('.blog-filter-btn');
-  const blogArticles = document.querySelectorAll('.blog-article-card');
-  const noBlogResults = document.getElementById('noBlogResults');
+  const typewriterTarget = document.getElementById('typewriterText');
+  
+  if (typewriterTarget && CONFIG.roles.length > 0) {
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-  const filterBlogPosts = () => {
-    if (!blogArticles.length) return;
+    function typeLoop() {
+      const currentRole = CONFIG.roles[roleIndex];
 
-    const searchTerm = blogSearchInput ? blogSearchInput.value.toLowerCase().trim() : '';
-    const activeFilterBtn = document.querySelector('.blog-filter-btn.active');
-    const selectedCategory = activeFilterBtn ? activeFilterBtn.getAttribute('data-category') : 'all';
-
-    let matchCount = 0;
-
-    blogArticles.forEach((article) => {
-      const title = article.querySelector('.blog-title') ? article.querySelector('.blog-title').textContent.toLowerCase() : '';
-      const excerpt = article.querySelector('.blog-excerpt') ? article.querySelector('.blog-excerpt').textContent.toLowerCase() : '';
-      const category = article.getAttribute('data-category') || '';
-
-      const matchesSearch = !searchTerm || title.includes(searchTerm) || excerpt.includes(searchTerm);
-      const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
-
-      if (matchesSearch && matchesCategory) {
-        article.closest('.blog-col').style.display = 'block';
-        matchCount++;
+      if (isDeleting) {
+        charIndex--;
+        typewriterTarget.textContent = currentRole.substring(0, charIndex);
       } else {
-        article.closest('.blog-col').style.display = 'none';
+        charIndex++;
+        typewriterTarget.textContent = currentRole.substring(0, charIndex);
       }
-    });
 
-    if (noBlogResults) {
-      noBlogResults.style.display = matchCount === 0 ? 'block' : 'none';
+      let timeoutDuration = isDeleting ? CONFIG.erasingSpeed : CONFIG.typingSpeed;
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        // Finished typing word, wait before deleting
+        timeoutDuration = CONFIG.pauseBetweenWords;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        // Finished erasing, move to next role
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % CONFIG.roles.length;
+        timeoutDuration = CONFIG.pauseBeforeType;
+      }
+
+      setTimeout(typeLoop, timeoutDuration);
     }
-  };
 
-  if (blogSearchInput) {
-    blogSearchInput.addEventListener('input', filterBlogPosts);
+    typeLoop();
   }
 
-  if (blogFilterBtns.length > 0) {
-    blogFilterBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        blogFilterBtns.forEach((b) => b.classList.remove('active'));
-        btn.classList.add('active');
-        filterBlogPosts();
+  // --------------------------------------------------------------------------
+  // 7. SCROLL REVEAL ANIMATIONS (IntersectionObserver)
+  // --------------------------------------------------------------------------
+  const revealElements = document.querySelectorAll('.reveal-fade-up');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion) {
+    // Reveal everything immediately if user prefers reduced motion
+    revealElements.forEach((el) => el.classList.add('is-revealed'));
+  } else if ('IntersectionObserver' in window && revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target); // Trigger only once
+        }
       });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.12
+    });
+
+    revealElements.forEach((el) => {
+      revealObserver.observe(el);
+    });
+  } else {
+    // Fallback for older browsers
+    revealElements.forEach((el) => el.classList.add('is-revealed'));
+  }
+
+  // --------------------------------------------------------------------------
+  // 8. ONE-CLICK EMAIL COPY TO CLIPBOARD
+  // --------------------------------------------------------------------------
+  const copyEmailBtn = document.getElementById('copyEmailBtn');
+  
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(CONFIG.developerEmail);
+        const originalText = copyEmailBtn.innerHTML;
+        copyEmailBtn.innerHTML = '<i class="bi bi-check2"></i> Copied!';
+        copyEmailBtn.classList.add('btn-success');
+
+        setTimeout(() => {
+          copyEmailBtn.innerHTML = originalText;
+          copyEmailBtn.classList.remove('btn-success');
+        }, 2500);
+      } catch (err) {
+        // Fallback prompt
+        window.prompt('Copy email to clipboard: Ctrl+C, Enter', CONFIG.developerEmail);
+      }
     });
   }
 
   // --------------------------------------------------------------------------
-  // 7. Copy Email to Clipboard Functionality
+  // 9. CLIENT-SIDE CONTACT FORM VALIDATION & MAILTO HANDLER
   // --------------------------------------------------------------------------
-  const copyEmailButtons = document.querySelectorAll('.btn-copy-email');
-  const copyToast = document.getElementById('copyToast');
-
-  const showCopyToast = (message = 'Email copied to clipboard!') => {
-    if (!copyToast) return;
-    copyToast.textContent = message;
-    copyToast.classList.add('show');
-    setTimeout(() => {
-      copyToast.classList.remove('show');
-    }, 2800);
-  };
-
-  copyEmailButtons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      const emailToCopy = button.getAttribute('data-email') || 'alex.dev@example.com';
-
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(emailToCopy)
-          .then(() => {
-            showCopyToast(`Copied: ${emailToCopy}`);
-          })
-          .catch(() => {
-            fallbackCopyText(emailToCopy);
-          });
-      } else {
-        fallbackCopyText(emailToCopy);
-      }
-    });
-  });
-
-  const fallbackCopyText = (text) => {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.position = 'fixed';
-    textArea.style.opacity = '0';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-      const successful = document.execCommand('copy');
-      if (successful) {
-        showCopyToast(`Copied: ${text}`);
-      } else {
-        showCopyToast('Failed to copy. Please manually select the email.');
-      }
-    } catch (err) {
-      showCopyToast('Failed to copy. Please manually select the email.');
-    }
-    document.body.removeChild(textArea);
-  };
-
-  // --------------------------------------------------------------------------
-  // 8. Contact Form Validation & Feedback Simulation
-  // --------------------------------------------------------------------------
-  const contactForm = document.getElementById('portfolioContactForm');
-  const formSuccessAlert = document.getElementById('formSuccessAlert');
-  const formErrorAlert = document.getElementById('formErrorAlert');
+  const contactForm = document.getElementById('contactForm');
+  const formAlertBanner = document.getElementById('formAlertBanner');
 
   if (contactForm) {
     const nameInput = document.getElementById('contactName');
@@ -342,82 +317,91 @@ document.addEventListener('DOMContentLoaded', () => {
     const subjectInput = document.getElementById('contactSubject');
     const messageInput = document.getElementById('contactMessage');
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Email regex validator
+    const isValidEmail = (email) => {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailPattern.test(email.trim());
+    };
 
-    const validateField = (input, isValid) => {
+    // Real-time validation helper
+    const validateField = (input, isValid, errorMsg) => {
+      const feedbackEl = input.parentElement.querySelector('.invalid-feedback');
       if (isValid) {
-        input.classList.remove('is-invalid-field');
+        input.classList.remove('is-invalid');
+        input.classList.add('is-valid');
       } else {
-        input.classList.add('is-invalid-field');
+        input.classList.remove('is-valid');
+        input.classList.add('is-invalid');
+        if (feedbackEl && errorMsg) {
+          feedbackEl.textContent = errorMsg;
+        }
       }
       return isValid;
     };
 
+    // Input blur & input event listeners
+    nameInput?.addEventListener('input', () => {
+      validateField(nameInput, nameInput.value.trim().length >= 2, 'Please enter at least 2 characters.');
+    });
+
+    emailInput?.addEventListener('input', () => {
+      validateField(emailInput, isValidEmail(emailInput.value), 'Please enter a valid email address.');
+    });
+
+    subjectInput?.addEventListener('input', () => {
+      validateField(subjectInput, subjectInput.value.trim().length >= 3, 'Please enter a subject (min 3 characters).');
+    });
+
+    messageInput?.addEventListener('input', () => {
+      validateField(messageInput, messageInput.value.trim().length >= 10, 'Please write a message with at least 10 characters.');
+    });
+
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      let formIsValid = true;
+      const isNameValid = validateField(nameInput, nameInput.value.trim().length >= 2, 'Please enter at least 2 characters.');
+      const isEmailValid = validateField(emailInput, isValidEmail(emailInput.value), 'Please enter a valid email address.');
+      const isSubjectValid = validateField(subjectInput, subjectInput.value.trim().length >= 3, 'Please enter a subject (min 3 characters).');
+      const isMessageValid = validateField(messageInput, messageInput.value.trim().length >= 10, 'Please write a message with at least 10 characters.');
 
-      // Validate Name (minimum 2 chars)
-      const isNameValid = nameInput.value.trim().length >= 2;
-      if (!validateField(nameInput, isNameValid)) formIsValid = false;
-
-      // Validate Email
-      const isEmailValid = emailRegex.test(emailInput.value.trim());
-      if (!validateField(emailInput, isEmailValid)) formIsValid = false;
-
-      // Validate Subject (minimum 3 chars)
-      const isSubjectValid = subjectInput.value.trim().length >= 3;
-      if (!validateField(subjectInput, isSubjectValid)) formIsValid = false;
-
-      // Validate Message (minimum 10 chars)
-      const isMessageValid = messageInput.value.trim().length >= 10;
-      if (!validateField(messageInput, isMessageValid)) formIsValid = false;
-
-      if (!formIsValid) {
-        if (formErrorAlert) {
-          formErrorAlert.style.display = 'block';
-        }
-        if (formSuccessAlert) {
-          formSuccessAlert.style.display = 'none';
-        }
+      if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
+        // Focus first invalid element
+        const firstInvalid = contactForm.querySelector('.is-invalid');
+        if (firstInvalid) firstInvalid.focus();
         return;
       }
 
-      // Hide error alert
-      if (formErrorAlert) formErrorAlert.style.display = 'none';
+      // Valid submission: create prefilled mailto link
+      const name = encodeURIComponent(nameInput.value.trim());
+      const email = encodeURIComponent(emailInput.value.trim());
+      const subject = encodeURIComponent(subjectInput.value.trim());
+      const rawMessage = messageInput.value.trim();
+      const body = encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${rawMessage}`);
 
-      // Submit simulation button loading state
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Validating...';
+      const mailtoUrl = `mailto:${CONFIG.developerEmail}?subject=${subject}&body=${body}`;
 
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
+      // Open email client
+      window.location.href = mailtoUrl;
 
-        if (formSuccessAlert) {
-          formSuccessAlert.style.display = 'block';
-          formSuccessAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+      // Show reassuring feedback banner in UI
+      if (formAlertBanner) {
+        formAlertBanner.style.display = 'block';
+        formAlertBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
 
-        contactForm.reset();
-
-        // Clear any leftover invalid classes
-        [nameInput, emailInput, subjectInput, messageInput].forEach((input) => {
-          input.classList.remove('is-invalid-field');
-        });
-      }, 700);
-    });
-
-    // Real-time error removal when user starts typing
-    [nameInput, emailInput, subjectInput, messageInput].forEach((input) => {
-      input.addEventListener('input', () => {
-        if (input.classList.contains('is-invalid-field')) {
-          input.classList.remove('is-invalid-field');
-        }
+      // Reset form states
+      contactForm.reset();
+      [nameInput, emailInput, subjectInput, messageInput].forEach((el) => {
+        el.classList.remove('is-valid');
       });
     });
+  }
+
+  // --------------------------------------------------------------------------
+  // 10. DYNAMIC FOOTER COPYRIGHT YEAR
+  // --------------------------------------------------------------------------
+  const currentYearSpan = document.getElementById('currentYear');
+  if (currentYearSpan) {
+    currentYearSpan.textContent = new Date().getFullYear();
   }
 });

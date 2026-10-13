@@ -7,11 +7,19 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Python
+# Python & Helper scripts
 __pycache__/
 *.py[cod]
 *$py.class
 *.pyc
+*.py
+
+# Legacy archives & intermediate assets
+_legacy_multipage/
+assets/images/*-raw.jpg
+assets/images/*-ambient.jpg
+assets/images/*-crop.jpg
+assets/images/*-cover.jpg
 
 # Operating System Files
 .DS_Store

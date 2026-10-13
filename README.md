@@ -1,21 +1,8 @@
-# Professional Multi-Page Frontend Developer Portfolio
+# Premium Single-Page Frontend Developer Portfolio
 
-A modern, premium, dark-themed, and responsive developer portfolio website built using semantic **HTML5**, **CSS3**, **Vanilla JavaScript (ES6+)**, **Bootstrap 5**, and **Bootstrap Icons**.
+A modern, high-converting, fully responsive single-page developer portfolio website crafted with semantic **HTML5**, **CSS3**, **Vanilla JavaScript (ES6+)**, **Bootstrap 5**, **Bootstrap Icons**, and **Google Fonts**.
 
-Designed for frontend web developers applying for engineering roles, internships, and freelance projects.
-
----
-
-## 🌟 Visual Theme & Design System
-
-- **Color Palette:**
-  - Deep Charcoal Canvas: `#0a0e17` & `#111827`
-  - High-Contrast Headings: `#f8fafc` & White
-  - Muted Body Text: `#94a3b8` & `#64748b`
-  - Electric Indigo / Violet Accents: `#6366f1` / `#8b5cf6` with cyan highlights
-- **Typography:** Google Fonts **Inter** (`wght@300;400;500;600;700;800`).
-- **Components:** Glassmorphism card surfaces, soft shadows, thin borders (`rgba(255, 255, 255, 0.08)`), pulsing status indicator badges, and smooth scroll transitions.
-- **Accessibility:** Semantic landmarks (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`), visible focus states, label associations, and `prefers-reduced-motion` detection.
+Designed specifically for frontend developers, web engineers, and UI specialists to showcase skills, interactive projects, education milestones, and contact channels to recruiters, hiring managers, and prospective clients.
 
 ---
 
@@ -23,131 +10,200 @@ Designed for frontend web developers applying for engineering roles, internships
 
 ```text
 portfolio/
-├── index.html                  # Homepage with Hero, Expertise, Featured Work & Metrics
-├── about.html                  # Developer Journey, UI/UX Mindset, Education & Goals
-├── skills.html                 # Categorized Toolkit (Frontend, Tools, Exploratory)
-├── projects.html               # Showcase with Interactive Category Filters
-├── blog.html                   # Technical Notes with Live Search & Topic Filters
-├── article.html                # Reusable Article & Tutorial Template
-├── contact.html                # Responsive Contact Form with Client-Side Validation
+├── index.html                  # Single-page portfolio with all smooth-scroll sections
+├── css/
+│   └── style.css               # Design tokens (CSS variables), layouts & animations
+├── js/
+│   └── script.js               # Vanilla JS: scrollspy, typewriter, form validation, theme toggle
 ├── assets/
-│   ├── css/
-│   │   └── style.css           # Custom Design Tokens, Layouts & Animations
-│   ├── js/
-│   │   └── script.js           # Vanilla JavaScript Interactivity & Handlers
-│   └── images/
-│       ├── profile.jpg         # Developer Avatar / Stylized Visual
-│       ├── project-chocolate.jpg   # Chocolate Store Preview Thumbnail
-│       ├── project-notes.jpg       # Notes App Preview Thumbnail
-│       └── project-authentication.jpg # Auth System Preview Thumbnail
-├── create_images.py            # Automated Asset Generator Script
-└── README.md                   # Documentation & Setup Guide
+│   ├── images/
+│   │   ├── profile.jpg         # Stylized developer avatar image (600x600)
+│   │   ├── project-1.jpg       # Project 1: Chocolate E-Commerce Storefront
+│   │   ├── project-2.jpg       # Project 2: Developer Portfolio Website
+│   │   ├── project-3.jpg       # Project 3: Task Management Application
+│   │   └── project-4.jpg       # Project 4: Weather Dashboard Application
+│   └── resume.pdf              # Sample developer resume PDF for download
+├── generate_assets.py          # Python asset generator for sample images and PDF
+└── README.md                   # Comprehensive customization and setup guide
 ```
 
 ---
 
 ## 🚀 How to Run the Website (Live Server in VS Code)
 
-This website is completely static and runs directly in any modern browser without needing Node.js, npm, or build tools.
+This website is **100% static** and runs directly in any modern browser without requiring Node.js, npm, or build steps.
 
-### Option 1: VS Code Live Server (Recommended)
-1. Open **Visual Studio Code**.
-2. Go to **File > Open Folder...** and select the `portfolio` folder:
+### Step 1: Open the Project in VS Code
+1. Launch **Visual Studio Code**.
+2. Click **File > Open Folder...** (`Ctrl+K Ctrl+O` on Windows).
+3. Select the `portfolio` folder:
    ```text
    C:\Users\LENOVO\.gemini\antigravity\scratch\portfolio
    ```
-3. Install the **Live Server** extension (by Ritwick Dey) from the VS Code Extensions marketplace (`Ctrl+Shift+X`).
-4. Right-click on `index.html` and select **"Open with Live Server"** (or click **"Go Live"** in the bottom status bar).
-5. The portfolio will automatically open in your browser at `http://127.0.0.1:5500/index.html`.
 
-### Option 2: Direct Browser Execution
-Double-click `index.html` in Windows Explorer to open it directly in Chrome, Firefox, Edge, or Brave.
+### Step 2: Install Live Server (if not already installed)
+1. In VS Code, open the Extensions sidebar (`Ctrl+Shift+X`).
+2. Search for **Live Server** (by *Ritwick Dey*).
+3. Click **Install**.
 
----
-
-## ⚡ Interactive JavaScript Capabilities
-
-All interactions are implemented in pure **Vanilla JavaScript** (`assets/js/script.js`):
-
-1. **Sticky Navbar Observer:** Transitions background blur and border on scroll; auto-closes mobile navigation upon link clicks or `Escape` key press.
-2. **Active Page Detection:** Automatically highlights the current page in the navbar based on the window path.
-3. **Scroll Reveal:** Smooth reveal effects triggered via `IntersectionObserver` with fallback for reduced-motion settings.
-4. **Project Category Filter:** Instant filtering between `All`, `Websites`, and `Applications` on `projects.html`.
-5. **Real-time Blog Search & Tag Filters:** Live search input filters article titles and descriptions immediately with custom no-results feedback.
-6. **Client-side Form Validation:** Validates full name (min 2 characters), email structure (regex), subject (min 3 characters), and message length (min 10 characters) with real-time error clearance.
-7. **One-Click Email Copy:** Copies email address to the clipboard via the Clipboard API and displays a transient toast alert.
-8. **Back to Top Button:** Smoothly scrolls back to top when clicked after scrolling down 350px.
-
----
-
-## ✏️ Personalization & Placeholders Guide
-
-All personal identifiers are marked with clear bracketed placeholders. Perform a find-and-replace in VS Code (`Ctrl+Shift+F`) to customize your details:
-
-| Placeholder | Description | Example Replacement |
-| :--- | :--- | :--- |
-| `[Your Name]` | Your full name | `Alex Rivera` |
-| `[Your Professional Title]` | Target role | `Frontend Web Developer` |
-| `[Your Email]` | Contact email address | `alex.rivera@example.com` |
-| `[Your Location]` | City, State or Country | `San Francisco, CA` |
-| `[GitHub URL]` | GitHub profile username | `alexrivera-dev` |
-| `[LinkedIn URL]` | LinkedIn handle | `alexrivera-dev` |
-| `[Resume File]` | Resume path or link | `assets/docs/resume.pdf` |
-| `[Education Details]` | University, Degree, Year | `B.S. in Computer Science, 2025` |
-
----
-
-## 📬 Connecting the Contact Form to a Real Backend
-
-Because this is a static frontend website, `contact.html` validates submissions client-side and displays a simulated confirmation banner.
-
-To receive real email notifications from clients and recruiters in production, integrate a static form endpoint:
-
-### Using Formspree (Free & Simple)
-1. Register at [formspree.io](https://formspree.io).
-2. Create a new form and copy your endpoint ID (e.g., `https://formspree.io/f/xv...`).
-3. In `contact.html`, set the form attribute:
-   ```html
-   <form id="portfolioContactForm" action="https://formspree.io/f/your-form-id" method="POST">
+### Step 3: Launch the Website
+1. In the VS Code File Explorer, right-click `index.html`.
+2. Select **"Open with Live Server"** (or click **"Go Live"** in the bottom status bar).
+3. Your default web browser will automatically open:
+   ```text
+   http://127.0.0.1:5500/index.html
    ```
-
-### Other Free Alternatives:
-- **Web3Forms:** Simple access key without account registration.
-- **EmailJS:** Trigger emails directly from client-side JavaScript.
+4. Any edits made to `index.html`, `css/style.css`, or `js/script.js` will trigger instant hot-reloading in the browser.
 
 ---
 
-## 📝 Adding New Blog Posts
+## 🎨 Visual Design System & Color Palette
 
-1. Make a copy of `article.html` and name it after your article (e.g., `mastering-css-grid.html`).
-2. Update the `<title>`, metadata, and article content.
-3. Open `blog.html` and add a new article card inside `#blogGrid`:
+The project is styled using CSS Variables (`:root` in `css/style.css`) following a dark developer aesthetic with blue-to-purple gradient highlights:
+
+| Token | Variable | Hex / Value | Usage |
+| :--- | :--- | :--- | :--- |
+| **Canvas Background** | `--bg-primary` | `#070B16` | Deep navy-black page body |
+| **Secondary Background** | `--bg-secondary` | `#0D1424` | Alternate section background |
+| **Card Surface** | `--bg-card` | `#111B2D` | Rounded card containers |
+| **Card Hover** | `--bg-card-hover` | `#152238` | Card elevation on hover |
+| **Primary Accent** | `--primary-accent` | `#438AFF` | Electric blue buttons, links & badges |
+| **Secondary Accent** | `--secondary-accent` | `#A855F7` | Vibrant purple gradient highlight |
+| **Main Text** | `--text-primary` | `#F8FAFC` | High-contrast headings and prominent text |
+| **Muted Text** | `--text-muted` | `#9CA8BA` | Body paragraphs and descriptions |
+| **Card Border** | `--border-color` | `rgba(67, 138, 255, 0.15)` | Subtle translucent card borders |
+| **Hover Glow** | `--border-glow` | `rgba(168, 85, 247, 0.35)` | Violet ambient glow on card hover |
+
+---
+
+## 🧭 Page Sections & Structure
+
+All navigation items smoothly scroll to their corresponding sections:
+
+1. **Sticky Navigation Bar (`#mainNavbar`)**
+   - Brand logo: `vishnu.dev`
+   - Nav links: Home, About, Skills, Projects, Services, Contact
+   - Resume download button (`assets/resume.pdf` ➔ `Vishnu_Kumar_Mandal_Resume.pdf`)
+   - GitHub (`vishnumandalji3754-pixel`) & LinkedIn (`vishnu-kumar-mandal-510261439`) shortcuts
+   - Dark / Light mode toggle button (persists in `localStorage`)
+   - Scroll progress bar at the very top of the page
+   - Auto-collapsing mobile hamburger menu
+2. **Hero Section (`#home`)**
+   - "Available for new opportunities" status badge with pulsating green beacon dot
+   - Prominent greeting: "Hi, I'm Vishnu Kumar Mandal" with blue-to-purple gradient text
+   - Typewriter rotating role animation ("Frontend Developer", "Web Developer", "JavaScript Developer", "UI Enthusiast")
+   - Action CTAs: "Explore My Work" and "Download Resume"
+   - Profile photo: High-resolution portrait of Vishnu with subtle gradient border and gentle floating animation
+   - 4 floating technology badges: HTML5, CSS3, JavaScript, Bootstrap 5
+3. **About Me (`#about`)**
+   - Professional narrative highlighting Vishnu's CS background in Ranchi and web engineering skills
+   - Interactive VS Code code snippet mockup card (`vishnu.config.js`)
+   - 4 achievement cards (`15+ Projects`, `12+ Technologies`, `100+ Problems Solved`, `100% Growth`)
+   - Personal philosophy highlight quote card
+4. **Skills & Technologies (`#skills`)**
+   - **Programming Languages:** C, C++, Java, Python, JavaScript (ES6+)
+   - **Frontend Development:** HTML5, CSS3, Bootstrap 5, Responsive Design
+   - **Tools & Workflow:** Git, GitHub, VS Code, Browser DevTools
+   - **Currently Exploring:** React, Node.js, SQL & Databases
+   - Premium 4-column Bento modules with radiant top beams, brand-colored neon icons, and micro-tag pills (compact & attractive in a single screen view)
+5. **Featured Projects (`#projects`)**
+   - Compact 3-column responsive project grid:
+     1. **Ganesh Ji Website:** Interactive devotional web experience with cultural aesthetics, devotional audio elements, and smooth modern animations ([Live Demo](https://ganesh-git-main-alpha-fa7c.vercel.app/) · [Source Code](https://github.com/vishnumandalji3754-pixel/frontend-)).
+     2. **Online Complaint Register System:** Comprehensive grievance registration and tracking portal with category selection, issue logging, and responsive UI ([Live Demo](https://complaint-register-system-git-main-alpha-fa7c.vercel.app/)).
+     3. **Developer Portfolio (`vishnu.dev`):** High-performance single-page showcase featuring dark/light modes, scrollspy, interactive typing effect, and client-side contact validation.
+   - Preview image zoom and card elevation on hover
+   - GitHub repo link and Live demo link buttons pointing to `vishnumandalji3754-pixel`
+   - "View All Projects on GitHub" link button
+6. **Services Section (`#services`)**
+   - 4 specialized cards: Responsive Website Development, Frontend UI Development, Landing Page Design, Website Optimization
+7. **Additional Highlights (`#highlights`)**
+   - Compact cards: Coding Interests, Learning Goals, Favorite Tools, Areas of Interest
+8. **Contact Section (`#contact`)**
+   - Heading: *"Let's Build Something Great Together"*
+   - Email address (`vishnumandalji3754@gmail.com`) with one-click clipboard copy button
+   - GitHub (`github.com/vishnumandalji3754-pixel`), LinkedIn, and Location (`Ranchi, Jharkhand, India`) cards
+   - Client-side validated form (Name, Email, Subject, Message) with real-time feedback
+   - Submits via prefilled `mailto:` trigger to `vishnumandalji3754@gmail.com`
+9. **Footer**
+   - Developer brand (`vishnu.dev`), Ranchi tagline, quick links, social icons, dynamic copyright year (`new Date().getFullYear()`), and smooth "Back to Top" button
+
+---
+
+## ✏️ Personalization Reference
+
+| Target | Value in Portfolio |
+| :--- | :--- |
+| **Developer Name** | `Vishnu Kumar Mandal` |
+| **Brand Logo** | `vishnu.dev` |
+| **Phone / WhatsApp** | `+91 62998 30228` |
+| **Education** | `BCA (DSPMU Ranchi, 2024-2028, 8.7 SGPA)` |
+| **Email Address** | `vishnumandalji3754@gmail.com` |
+| **Location** | `Ranchi, Jharkhand, India` |
+| **GitHub Profile** | `https://github.com/vishnumandalji3754-pixel` |
+| **LinkedIn Profile** | `https://www.linkedin.com/in/vishnu-kumar-mandal-510261439` |
+| **Profile Photo** | `assets/images/profile.jpg` (User portrait) |
+| **Resume (Google Drive)** | `https://drive.google.com/drive/folders/1cDdxOpzmTmxGqJqyf6_WLyZJsfHdydfG?usp=sharing` |
+| **Resume PDF (Offline)** | `assets/resume.pdf` (Vishnu Kumar Mandal Resume) |
+| **Core Languages** | `C, C++, Java, Python, JavaScript` |
+
+---
+
+## 🛠️ How to Customize Colors & Animations
+
+### Customizing Colors
+Open `css/style.css` and adjust the variables under `:root`:
+```css
+:root {
+  /* Change the accent gradient to Emerald / Cyan: */
+  --primary-accent: #10B981;
+  --secondary-accent: #06B6D4;
+  --accent-gradient: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+
+  /* Change background colors: */
+  --bg-primary: #070B16;
+  --bg-card: #111B2D;
+}
+```
+
+### Customizing Typewriter Roles
+Open `js/script.js` and modify the `CONFIG.roles` array:
+```javascript
+const CONFIG = {
+  roles: [
+    'Frontend Developer',
+    'React Specialist',
+    'UI/UX Enthusiast',
+    'Open Source Contributor'
+  ],
+  typingSpeed: 100,
+  erasingSpeed: 50,
+  pauseBetweenWords: 2000
+};
+```
+
+### Accessibility & Reduced Motion
+The stylesheet includes built-in support for `prefers-reduced-motion: reduce`. Users who prefer reduced motion will automatically have keyframe animations, floating elements, and transitions disabled.
+
+---
+
+## 📬 Connecting the Contact Form to a Backend Email Service
+
+By default, the contact form validates input client-side and triggers a prefilled `mailto:` link. To receive messages directly in your inbox without opening an email client:
+
+### Option A: Using Formspree (Free & Simple)
+1. Register an account at [Formspree.io](https://formspree.io/).
+2. Create a new form and copy your Form ID (e.g., `xpzgvyab`).
+3. In `index.html`, add the `action` and `method` attributes to `<form id="contactForm">`:
    ```html
-   <div class="col-md-6 col-lg-4 blog-col reveal-fade-up">
-     <article class="custom-card blog-article-card" data-category="css">
-       <span class="card-top-glow" aria-hidden="true"></span>
-       <div class="d-flex justify-content-between align-items-center mb-3">
-         <span class="badge bg-info text-dark">CSS & Layout</span>
-         <span class="text-muted-custom small">Nov 2026</span>
-       </div>
-       <h3 class="h5 mb-2">
-         <a href="mastering-css-grid.html" class="text-white text-decoration-none blog-title">
-           Mastering CSS Grid in 2026
-         </a>
-       </h3>
-       <p class="text-secondary-custom small mb-4 blog-excerpt">
-         A comprehensive visual guide to grid tracks, fractional units, and named grid areas.
-       </p>
-       <div class="mt-auto pt-3 border-top border-subtle d-flex justify-content-between align-items-center">
-         <span class="text-muted-custom small"><i class="bi bi-clock me-1"></i>5 min read</span>
-         <a href="mastering-css-grid.html" class="fw-semibold small text-primary">Read Article <i class="bi bi-arrow-right"></i></a>
-       </div>
-     </article>
-   </div>
+   <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
    ```
+4. Comment out or adapt the `e.preventDefault()` mailto logic in `js/script.js`.
+
+### Option B: Using EmailJS
+1. Register at [EmailJS.com](https://www.emailjs.com/).
+2. Add the EmailJS CDN script and send form data via `emailjs.sendForm(...)`.
 
 ---
 
-## 📄 License & Attribution
-
-Designed and built as an open portfolio template. Free to use, adapt, and deploy for personal portfolio showcases.
+## 📄 License
+This portfolio template is free and open-source for personal and commercial use.
